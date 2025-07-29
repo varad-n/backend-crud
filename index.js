@@ -3,10 +3,15 @@ import express, { response } from "express";
 import mongoose from "mongoose";
 const app = express()
 
-
+app.use(express.json());
 
 app.get('/', (req, res) => {
     res.send("Hello from Node API");
+});
+
+app.post('/api/products', (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
 });
 
 
