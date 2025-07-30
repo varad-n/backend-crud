@@ -2,6 +2,7 @@ import { mongoDBURL } from './config.js';
 import express, { response } from "express";
 import mongoose from "mongoose";
 const app = express()
+import Product from './models/product.model.js';
 
 app.use(express.json());
 
