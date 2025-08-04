@@ -4,8 +4,12 @@ import mongoose from "mongoose";
 const app = express()
 import Product from './models/product.model.js';
 
+// middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+
+// routes
+app.use("/api/products", productRoute);
 
 app.get('/', (req, res) => {
     res.send("Hello from Node API");
